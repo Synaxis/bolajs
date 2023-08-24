@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<title> Teste interface </title> 
-</head>
-
+<title> Teste interface </title>
 <style> 
  .bola {
- background-color: black;
- border-radius: 200px;
- width: 50px;
- height: 50px;
- 
+   background-color: black;
+   border-radius: 50px;
+   width: 50px;
+   height: 50px;
+   position: relative;
  }
  
  .basebola {
- margin-top: 100px;
- background-color: black;
- width: 400px;
- height: 100px;
+   margin-top: 100px;
+   background-color: black;
+   width: 400px;
+   height: 100px;
+   position: relative;
  }
 </style>
-
+</head>
 <body>
+<div class="bola" id="bola"></div>
+<div class="basebola" id="basebola"></div>
 
-<div class="bola"> </div>
-<div class="basebola"> </div>
+<script> 
+var bola = document.getElementById("bola");
+var baseBola = document.getElementById("basebola");
+var position = 100;
+
+function handleKeyPress(event) {
+  if (event.keyCode === 38) {
+    position -= 10;
+    if (position < 0) position = 0;
+    bola.style.marginTop = position + "px";
+  } else if {
+     console.log("down pressed");
+   }
+}
+
+document.addEventListener("keydown", handleKeyPress);
+</script>
 
 </body>
-
 </html>
